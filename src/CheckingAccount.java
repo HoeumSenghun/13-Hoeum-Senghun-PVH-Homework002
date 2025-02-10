@@ -13,16 +13,18 @@ public class CheckingAccount implements Account {
         this.dob = dob;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
-        this.balance = 0.0;  // default monkey = 0
+        this.balance = 0.0;  // default money = 0
     }
 
     @Override
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println("\t\t\t\tChecking Account");
+            System.out.println("                           |                  ");
+            System.out.println("                           V                  ");
+            System.out.println("\t\t\t\t\tChecking Account");
             System.out.println("Received: " + amount + "$");
-            System.out.println("Total Amount: " + balance + "$");
+            System.out.println("Total Balance: " + balance + "$");
             System.out.println("===========================================================");
             System.out.println("\nDeposit successful!");
         } else {
@@ -34,9 +36,9 @@ public class CheckingAccount implements Account {
     public boolean withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            System.out.println("\t\t\t\tChecking Account");
+            System.out.println("\t\t\t\t\tChecking Account");
             System.out.println("Withdrawn: " + amount + "$");
-            System.out.println("Total Amount: " + balance + "$");
+            System.out.println("Total Balance: " + balance + "$");
             System.out.println("===========================================================");
             System.out.println("\nWithdrawal successful!");
             return true;
@@ -50,7 +52,7 @@ public class CheckingAccount implements Account {
     public boolean transfer(double amount, Account targetAccount) {
         if (withdraw(amount)) {
             targetAccount.deposit(amount);
-            System.out.println("Transferred: $" + amount + " to account.");
+            System.out.println("Transferred: " + amount + "$ to account.");
             return true;
         }
         return false;

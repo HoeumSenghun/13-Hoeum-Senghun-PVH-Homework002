@@ -82,8 +82,9 @@ public class Main {
             System.out.println(">>>>>>>>>>>>>>>>>>>>>> Deposit Money <<<<<<<<<<<<<<<<<<<");
             System.out.println("1. Deposit to Checking Account\n2. Deposit to Saving Account\n3. Back");
             System.out.println("===========================================================");
+            System.out.println("=> Choose option (1-3): ");
             int option = scanner.nextInt();
-            System.out.print("Enter money to deposit : $");
+            System.out.print("Enter money to deposit :");
             double amount = scanner.nextDouble();
 
             if (option == 1 && checkingAccount != null) {
@@ -101,8 +102,9 @@ public class Main {
             System.out.println(">>>>>>>>>>>>>>>>>>>>>> Withdraw Money <<<<<<<<<<<<<<<<<<<");
             System.out.println("1. Withdraw from Checking Account\n2. Withdraw from Saving Account\n3. Back");
             System.out.println("===========================================================");
+            System.out.println("=> Choose option (1-3): ");
             int option = scanner.nextInt();
-            System.out.print("Enter amount to withdraw : $ ");
+            System.out.print("Enter amount to withdraw: ");
             double amount = scanner.nextDouble();
 
             if (option == 1 && checkingAccount != null) {
@@ -117,7 +119,10 @@ public class Main {
     //method transfer
     private static void transferMoney() {
         if (checkAccountsExist()) {
-            System.out.println("1. Transfer from Checking to Saving\n2. Transfer from Saving to Checking\n3. Back");
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>> Transfer Moneys <<<<<<<<<<<<<<<<<<<");
+            System.out.println("1. Transfer from Checking Account -> Saving Account\n2. Transfer from Saving Account -> Checking Account\n3. Back");
+            System.out.println("===========================================================");
+            System.out.println("=> Choose option (1-3): ");
             int option = scanner.nextInt();
             System.out.print("Enter amount to transfer: ");
             double amount = scanner.nextDouble();
